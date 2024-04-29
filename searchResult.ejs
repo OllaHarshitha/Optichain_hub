@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Product Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Light gray background color */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff; /* White background color for content */
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        h3 {
+            color: #555;
+            margin-top: 20px;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        input[type="number"] {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 200px;
+        }
+
+        input[type="submit"] {
+            padding: 8px 20px;
+            background-color: #007bff; /* Blue submit button */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Search Product Information</h1>
+        <% if(count==0) { %>
+        <h3>No product found</h3>
+        <% } else { %>
+        <h3>Search product: <%= data.product_id %></h3>
+        <h3>Search name: <%= data.name %></h3>
+        <h3>Search description: <%= data.description %></h3>
+        <h3>Search price: <%= data.price %></h3>
+        <h3>Search quantity: <%= data.quantity %></h3>
+        <% } %>
+
+        <form action="/search" method="post">
+            <label for="id">ID:</label>
+            <input type="number" name="id" value="id" placeholder="Enter product ID">
+            <input type="submit" value="Submit">
+        </form>
+
+        <p><a href="http://localhost:8080/">Go home</a></p>
+    </div>
+</body>
+
+</html>

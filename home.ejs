@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5; /* Light gray background */
+            padding: 20px;
+            margin: 0;
+        }
+
+        h1, h3 {
+            text-align: center;
+            color: #333; /* Dark gray color */
+        }
+
+        form {
+            max-width: 500px;
+            margin: 20px auto;
+            background-color: #fff; /* White background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for form */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333; /* Dark gray color */
+        }
+
+        input[type="text"] {
+            width: calc(100% - 12px); /* Adjusting for padding */
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd; /* Light gray border */
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #007bff; /* Blue color for submit button */
+            color: #fff; /* White color for text */
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            color: #007bff; /* Blue color for links */
+            margin-top: 20px;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Product Registration</h1>
+    <h3>The number of products are: <%= count %></h3>
+
+    <form action="/register" method="post">
+        <label for="product_id">Product ID:</label>
+        <input type="text" name="product_id" id="product_id" placeholder="Enter Product ID" required>
+        
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" placeholder="Enter Name of the Product" required>
+        
+        <label for="description">Description:</label>
+        <input type="text" name="description" id="description" placeholder="Enter Description" required>
+        
+        <label for="price">Price:</label>
+        <input type="text" name="price" id="price" placeholder="Enter Price" required>
+        
+        <label for="quantity">Quantity:</label>
+        <input type="text" name="quantity" id="quantity" placeholder="Enter Quantity" required>
+        
+        <input type="submit" value="Submit">
+    </form>
+
+    <a href="http://localhost:8080/">Go Home</a>
+</body>
+
+</html>
